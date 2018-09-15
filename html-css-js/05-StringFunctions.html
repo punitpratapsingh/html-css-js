@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title> - JavaScript</title>
+<style type="text/css">
+body{
+	font-size: 1.5em;
+	padding: 0px 50px;
+}
+
+</style>
+</head>
+
+<body>
+<h1 align="center">String in JavaScript</h1>
+<hr/>
+<input type="text" id="string" name="string" placeholder="Enter any string..."/>
+<button onClick="myFunction()">Submit</button>
+<script type="text/javascript">
+
+function myFunction(){
+	var str = document.getElementById("string").value;
+	
+	
+	
+	if(str==""){
+		str = "My name is \"Techknow Heights\""; // Start with some text.
+		alert("Nothing is provided by you but i am taking \n\tMy name is \"Techknow Heights\"\nto start...");
+	}
+	document.write("Value is "+str);
+	document.write("<br/><h2>String functions:<br/><br/><br/>");
+	
+
+	document.write("<br/>First character: "+str.charAt(0));
+	document.write("<br/>last character: "+str.charAt(str.length-1));	 
+	document.write("<br/>Sub String(1, 4): "+str.substring(1,4));	
+	document.write("<br/>Slice string str.slice(1,4) : "+str.slice(1,4));			
+	document.write("<br/>Last two characters: str.slice(-2) "+str.slice(-2));	
+	document.write("<br/>Position of first 's': "+str.indexOf("s"));
+	document.write("<br/>Position of last 's': "+str.lastIndexOf("s"));
+	document.write("<br/>Position of s at or after 8: "+str.indexOf("s", 2));
+	document.write("<br/>Replace character (if exist): "+str.replace("s", "S"));
+	document.write("<br/>Change the string case: "+str.toUpperCase());
+	document.write("</h2>");
+	
+}
+</script>
+</body>
+</html>

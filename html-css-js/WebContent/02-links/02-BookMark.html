@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>BookMark Demo</title>
+</head>
+<body>
+<a href="#bottom" id="top">Top</a>
+<p>Core Java</p>
+<p>Java is a General Purpose and Object Oriented programming language created by James Gosling from Sun Microsystems in 1991. The first publicly released of Java (Java 1.0) in 1995. Java is Based on "write once, run anywhere" (WORA) Feature, meaning that code that runs on one platform does not need to be recompiled to run on another. </p>
+<p>If else loop is use for condition check. The if-then statement is the most basic of all the control flow statements. It tells your program to execute a certain section of code only if a particular test evaluates to true.</p>
+<pre>
+public class IfElseIfDemo
+{
+    public static void main(String args[])
+    {
+        int temp1=3;
+        int temp2=3;
+
+        if(temp1==5)
+        {   
+            if(temp2==3)
+            {
+                System.out.println("Hi, temp1 is 5 and temp2 is 3");
+ 
+            }
+            else
+            {
+                System.out.println
+                	("Hi, temp1 is 5 and temp2 is some value other than 3");
+            }
+        }
+        else if(temp1==4)
+        {
+            System.out.println("Hi, temp1 is 4");
+ 
+        }
+        else if(temp1==3)
+        {
+            if(temp2==3)
+            {              
+               System.out.println("Hi, temp1 is 3 and temp2 is 3");
+ 
+            }
+            else if(temp2==2)
+            {                
+                System.out.println("Hi, temp1 is 3 and temp2 is 2");
+            }
+ 
+        }
+        else
+        {
+            System.out.println("Hi, temp1 is some value other than 5,4,3");
+        }
+    }
+}
+
+</pre>
+<a href="#top" id="bottom">Bottom</a>
+<br>
+<br>
+<br>
+</body>
+</html>

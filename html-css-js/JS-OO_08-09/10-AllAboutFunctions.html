@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    // Using Arguments
+    function sum(){
+        var s = 0;
+    for(i in arguments){
+        s  = s + arguments[i];
+    }
+        console.log("Sum is "+s);
+    }
+
+    // Using reduce in Arguments (reduce is an Array Method and from ECMA 5 it is also part of
+    // arguments
+   /* function sumWithReduce(){
+
+        return arguments.reduce(function(a,b){
+            return a + b;
+        },0);
+    }*/
+
+    //***************** Use of this ******************************
+    var emp = {};
+    emp.name='Amit';
+    emp.whoAmI= function(){
+        console.log("My Name is "+this.name);
+        console.log("My Name is "+name);
+    }
+    function whoAmI(){
+        console.log("My Name is "+this.name);
+    }
+    whoAmI(); // now this keyword refer to the global object becuase it is not call with an object
+    emp.whoAmI=whoAmI();
+    emp.whoAmI(); // now this keyword refer to the emp object
+    window.name="Chrome";  // it set the global name attribute so simple whoAmI() refer to window object
+
+    var dept={};
+    dept.name='IT';
+    dept.print=whoAmI();
+    dept.print(); // now it will print IT
+    // So it means depends on the object context this keyword decide for which it will be going to attach
+    window.whoAmI(); // now it will print chrome , so it means if a function is called alone , so it will call
+    // using window object
+
+    //********************* Use of Call and Apply ****************************
+    function printName(){
+
+        console.log("Name is ",this.name);
+    }
+    printName();
+    var emp={name:'Ram'};
+    var customer={name:'Amit'};
+    printName.call(emp);
+    printName.call(customer);
+    printName.apply(emp);
+    printName.apply(customer);
+    printName.apply(customer,[1001,"abcd"]);
+    printName.call(emp,1001,"abcd");
+
+    //********************** Use of length and name *****************************
+    printName.length; // print number of arguments
+    printName.name;  // print name of the function
+
+
+</script>
+</body>
+</html>

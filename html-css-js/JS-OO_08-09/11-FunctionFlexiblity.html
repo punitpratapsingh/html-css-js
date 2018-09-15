@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 1st Approach (Function declaration approach)
+        // The Benefit of this approach is
+        /* 1. function declarations loads before any code is executed. So in function declaration approach you can
+        call the function before it's declaration.
+        eg. show();  // Here calling a function before declaration
+            function show(){
+            console.log("Show Called");
+            }
+           2.Well you could argue that Function Declarations are forgiving –
+           if you try to use a function before it is declared, hoisting fixes the order and the function
+           gets called without mishap. But that kind of forgiveness does not encourage tight coding and in the
+           long run is probably more likely to promote surprises than prevent them. After all, programmers arrange their
+            statements in a particular sequence for a reason.
+
+         */
+        function add(a, b) {
+            return a+b;
+        }
+        //alert(add(2,3));
+
+
+        //2nd Approach (function expression approach)
+       // myfunction(100,200); // this wouldn't work , this will generate an undefined error
+        var myfunction = function (a,b){
+            return a + b;
+        }
+        myfunction(100,200);
+
+        // Function declaration vs Function expression
+        // So there is small exercise to understand the difference b/w the function declaration vs function expression
+
+        //Question 1:
+        function foo(){
+            function bar() {
+                return 3;
+            }
+            return bar();
+            function bar() {
+                return 8;
+            }
+        }
+        alert(foo());
+
+        //Question 2 :
+        function foo(){
+            var bar = function() {
+                return 3;
+            };
+            return bar();
+            var bar = function() {
+                return 8;
+            };
+        }
+        alert(foo());
+
+        // Question 3:
+        alert(foo());
+        function foo(){
+            var bar = function() {
+                return 3;
+            };
+            return bar();
+            var bar = function() {
+                return 8;
+            };
+        }
+
+        // Question 4:
+        function foo(){
+            return bar();
+            var bar = function() {
+                return 3;
+            };
+            var bar = function() {
+                return 8;
+            };
+        }
+        alert(foo());
+
+        //******************************************************************************************************
+        // So function expression can be
+        // Example 1 Anonymous function expression
+        var a = function (){
+            return 3;
+        }
+        a();
+        // Example 2 Named function expression
+        var a = function show(){
+            return 3;
+        }
+        a();
+        show(); // can i call like this (NO it will generate an error)
+        // the named function expression is used when you have recursive calling in a function , in anonymous function
+        // you can't do the recursive calling of a function
+
+
+        // Example 3 Self Invoking function expression or Immediate Invoking function (IIF)
+        (function sayHello(){
+            console.log("Hello User");
+        }());
+
+        // this is only used when you want to call the function only once , sayHello scope is not visible outside of
+        // it's scope , so it not call immediately.
+
+
+        // **********************************************************************************
+        /*
+         Function Declarations are officially prohibited within non-function blocks (such as if) . However all browsers allow them and interpret them in different ways.
+
+         For example the following code snippet in Firefox 3.6 throws an error because it interprets the Function Declaration as a Function Statement (see above) so x is not defined.
+         However in IE8, Chrome 5 and Safari 5 the function x is returned (as expected with standard Function Declarations).
+         */
+        function foo() {
+            if(false) {
+                function x() {};
+            }
+            return x;
+        }
+        alert(foo());
+
+        //**********************************************************************************************************************
+        // Function Expression with multiple function
+        var x = (function(){
+            return {  // Actually it is return an object
+                    show: function(){
+                        return "Hello Show";
+                    },
+                print:function(){
+                    return "Hello Print";
+                }
+
+            }
+        }());
+
+
+        var Calc2 = function() {
+        };
+        Calc2.prototype.add = function(a, b) {
+            return a+b;
+        };
+        Calc2.prototype.minus = function(a, b) {
+            return a-b;
+        };
+
+        var myCalc = new Calc2();
+        alert(myCalc.add(4,3));
+
+
+
+        //3rd Approach
+
+        var Calc3 = function() {
+
+        };
+        Calc3.prototype = {
+            add: function(a,b) {
+                return a+b;
+            },
+            minus: function(a,b) {
+                return a-b;
+            }
+        };
+
+
+        //4th Approach
+
+        var Calc4 = function() {
+
+        };
+        Calc4.method('add', function() {
+            return a+b;
+        }),
+                Calc4.method('minus', function() {
+                    return a-b;
+                });
+
+
+
+        //5th Approach
+
+        var Calc5 = function() {
+
+        };
+        Calc5.method('add', function() {
+            return a+b;
+        }).method('minus', function() {
+            return a-b;
+        });
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

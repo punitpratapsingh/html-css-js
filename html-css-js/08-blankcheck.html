@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Basic Example</title>
+<script type="text/javascript">
+function CheckForBlank(){
+	var str = document.getElementById("firstName")
+	// first way to check for blank string
+ 	if(str.value==""){
+		alert("Please enter your name:");
+	//}
+	// second way to check for blank string
+	if(!(str.value.length>0)){
+		alert("You have not entered your name:");
+	}
+ 	if(!isEmpty(str.value)){
+		document.write("<h1 style='text-align:center;color: Blue;'>"+str.value.toUpperCase()+"</h1>");
+	}
+ }
+
+// check for blank string using regular expression
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
+}
+
+// another function to check for invalid string
+function isEmpty(str){
+    return (str === undefined || str == null || str.length <= 0) ? true : false;
+}
+
+
+
+</script>
+</head>
+<body>
+<input type="text" id="firstName" name="name" placeholder="Enter your name"/>
+<button onClick="CheckForBlank()">Check</button>
+</body>
+</html>

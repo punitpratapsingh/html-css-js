@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+    var cache={};
+    function getPrime(num){
+    var isPrime = true;
+    if(typeof(cache[num])!=="undefined"){
+        console.log("Coming from the Cache.... It is Prime No "+cache[num]);
+        isPrime = true;
+        return isPrime;
+    }
+        else
+    {
+        if(num<=3){
+            isPrime = true;
+            cache[num]=num;
+            console.log("Processed....");
+            return isPrime;
+        }
+        else
+        {
+            for(var i = 2; i<=num-1; i++){
+                if(num% i ===0){
+                    isPrime= false;
+
+                    console.log("Processed....");
+                    break;
+
+                }
+            }
+            if(isPrime===true){
+                cache[num]=num;
+                console.log("Prime Number "+num);
+
+            }
+            else
+            {
+
+                console.log("Not a Prime Number "+num);
+            }
+        }
+        return isPrime;
+    }
+
+    }
+
+
+</script>
+<body>
+
+</body>
+</html>

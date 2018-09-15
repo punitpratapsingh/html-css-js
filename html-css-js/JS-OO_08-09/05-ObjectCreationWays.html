@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 1. The First Way is First Define a Function Constructor and then Create the Object
+        function Customer(cid , name,address){
+            console.log("I am A Constructor...")
+            this.cid=cid;
+            this.name=name;
+            this.address=address;
+        }
+        Customer.prototype.print=function(){
+            console.log(" I am a Function ...");
+            console.log("Id "+this.cid);
+            console.log("Name "+this.name);
+            console.log("Address "+this.address);
+        }
+        var ram = new Customer(1001,"Amit","Shakti Nagar");
+        ram.print();
+
+
+        // There is one more way
+        var MyCustomer = function(id,name,address){
+            console.log("I am A Constructor...")
+            this.id = id;
+            this.name=name;
+            this.address= address;
+        };
+        MyCustomer.prototype.print=function(){
+            console.log(" I am a Function ...");
+            console.log("Id "+this.id);
+            console.log("Name "+this.name);
+            console.log("Address "+this.address);
+        };
+        var ram = new MyCustomer(1001,"Ram","Ram Nagar");
+        ram.print();
+
+        //**********************************************************************************************
+
+        // 2nd Way to Create Object, this way Called Using Object Literal
+        // So in this way you can skip the class like stuff and create an object immediately.
+        // In this case shyam is called Singleton Object.
+        var shyam = {};
+        shyam.id = 1001;
+        shyam.name="Shyam Kumar";
+        shyam.address = "Raj Nagar";
+        shyam.print=function(){
+            console.log("Id "+this.id);
+            console.log("Name "+this.name);
+            console.log("Address "+this.address);
+        };
+        shyam.print();
+
+
+
+        // There is one more way in Object Literal
+        var mike = {id:1001,name:"Mike",address:"Roop Nagar",
+            print:function(){
+                console.log("Id "+this.id);
+                console.log("Name "+this.name);
+                console.log("Address "+this.address);
+            }
+        };
+        mike.print();
+
+        //*****************************************************************************************************
+        //3rd Way Singleton using a Function, This way is very less in use
+        // It create an Anonymous Function
+        var tim = new function(){
+            this.id=1001;
+            this.name="Tim";
+            this.address="New York";
+            this.print=function(){
+                console.log("Id is "+this.id);
+                console.log("Name is "+this.name);
+                console.log("Address is "+this.address);
+            };
+        };
+        tim.print();
+
+        //4th Way
+        // Object.create
+        // This Approach is used when you have same kind of object is already exist and you want the similar kind of object
+        // In this Case it maintain the prototypial inheritance, so the property of the sohan object is not copied into
+        // mohan object , where mohan look those properties from the prototypial chain.
+        var sohan = {};
+        sohan.id = 1001;
+        sohan.name="Sohan Kumar";
+        sohan.address= "Raj Nagar";
+        sohan.print=function(){
+            console.log("Id "+this.id);
+            console.log("Name "+this.name);
+            console.log("Address "+this.address);
+        };
+        sohan.print();
+        // Now i want to create a new object let say Mohan and this Object has the same charactersitics like sohan
+        var mohan = Object.create(sohan);
+        console.log(sohan);
+        console.log(mohan);  // Here in chrome console u can see mohan has no properties and it refer all from the sohan
+        mohan.id=1002;
+        mohan.name="Mohan";
+        console.log("After Modifications In Mohan Object............................................");
+        console.log(sohan);
+        console.log(mohan);  // Here in chrome console u can see mohan has 2 properties (id and name) and rest refer  from the sohan
+
+
+        //************************ More on Object.create ***********************************
+        var x = Object.create(null);
+        console.log(x);
+        var y = Object.create({});
+        console.log(y);
+        y = Object.create(Object.prototype);
+        console.log(y);
+        y = Object.create(Customer.prototype);
+        console.log(y);
+
+        //********************** How Object.create is internally written **********************************
+        function MyObject(){}
+        MyObject.myCustomCreate= function (obj){
+
+            var f = function(){};
+            f.prototype =obj;
+            return new f();
+        };
+        var parentObject = {id:1001,name:'Arnav'};
+        var childObject = MyObject.myCustomCreate(parentObject);
+        console.log("**************************************************");
+        console.dir(parentObject);
+        console.dir(childObject);
+        </script>
+</head>
+<body>
+
+</body>
+</html>

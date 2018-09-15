@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var obj = {};
+        console.dir(Object.getPrototypeOf(obj));
+        var obj2 = new Object();
+        console.dir(Object.getPrototypeOf(obj2));
+        console.dir(Object.prototype);
+
+        //*****************************************************************
+        var grandFather = Object.create(Object.prototype);
+        console.dir(grandFather);
+        grandFather.address="India";
+        grandFather.occupation="Business";
+
+        var father = Object.create(grandFather);
+        console.dir(father);
+        father.address="USA";
+        console.log("Again Print the Father...");
+        console.dir(father);
+
+        var son = Object.create(father);
+        console.dir(son);
+        son.address="UK"
+        console.log("Again print the Son");
+        console.dir(son);
+
+        //************************* proto vs Object.create ************************
+        /*
+         __proto__ is nonstandard and won't be supported everywhere.  Object.create is
+         part of the official spec and should be supported by every environment going forward.
+         */
+        son.__proto__===father;  // give true
+        father.__proto__===grandFather; // give true;
+        son.__proto__===grandFather;  // give false
+
+        //************* Doing Inheritance Using __proto__ **********************
+        var animal={legs:4,ear:2};
+        var dog={nature:"faithful"};
+        console.dir(dog);
+        dog.__proto__=animal;
+        console.dir(dog);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

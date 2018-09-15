@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Webspark - JavaScript</title>
+<style type="text/css">
+body{
+		font-size: 1.2em;
+		padding: 0px 50px;
+}
+	span{
+		color: magenta;
+		font-size: 1.5em;
+}
+</style>
+</head>
+<body>
+<h1 align="center">Numbers and MATH functions</h1>
+<hr/>
+
+<h3>Always be careful when using <span>document.write();</span> because it overrides the whole HTML page when used after loading the page.</h3>
+<button onClick="mathFuncs()">Math operations</button>
+<script type="text/javascript">
+var x = 15, y = -21, z = 245;
+function mathFuncs(){
+	document.write("<h1>This page is being overridden now..</h1>");
+	document.write("<br/>2 to the power 4 is: "+Math.pow(2,4));
+	document.write("<br/>Round to the neares integer: "+Math.round(4.6));
+	document.write("<br/>Round up an integer: "+Math.ceil(3.2));
+	document.write("<br/>Round down an integer: "+Math.floor(6.3));
+	document.write("<br/>Absolute value: "+Math.abs(-5));
+	document.write("<br/>Return the largest argument: "+Math.max(x,y,z));
+	document.write("<br/>Return the smallest argument: "+Math.min(x,y,z));
+	document.write("<br/>Pseudo-random number 0 <= x < 1.0: "+Math.random()); 
+	document.write("<br/>PI: "+Math.PI); 
+	document.write("<br/>e: The base of the natural logarithm: "+Math.E); 
+	document.write("<br/>The square root of 3: "+Math.sqrt(3)); 
+	 
+	document.write("<br/>Trigono: "+Math.sin(0)); 
+	document.write("<br/>Natural logarithm of 10: "+Math.log(10)); 
+	 
+	document.write("<br/>Math.E cubed: "+Math.exp(3)); 
+}
+</script>
+</body>
+</html>

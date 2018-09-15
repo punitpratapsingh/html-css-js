@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Basic Example</title>
+<script type="text/javascript">
+function exit()
+{
+var c = confirm("Are you sure?? Do you really want to close this window??");
+if(c){
+	alert("Bye Bye");
+	window.close();
+}
+else
+	{
+		alert("U will stay on this page...");		
+	}
+}
+</script>
+</head>
+<body>
+<button onclick="exit()">Click</button>
+</body>
+</html>

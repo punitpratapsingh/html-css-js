@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<script type="text/javascript"> 
+    function getElements() { 
+        var u=document.getElementById("userid").value;
+        alert(u);
+        var x=document.getElementsByName("myInput"); 
+        alert(x.length + " elements!") ;
+        for(var i =0; i<x.length;i++){
+		if(x[i].checked){
+		alert("Checked "+x[i].value);
+			}
+           }
+   }
+    function tickAll(){
+        var x = document.getElementsByName("myInput");
+        if(x){
+            for(var i = 0; i< x.length; i++){
+                x[i].checked = true;
+            }
+
+        }
+
+    }
+
+</script> 
+</head> 
+
+<body> 
+<input id="userid" type="text"/><br/>
+<input name="myInput" type="checkbox" value="S">Sports<br /> 
+<input name="myInput" type="checkbox" value="R">Reading<br /> 
+<input name="myInput" type="checkbox" value="T">Travel<br />
+<input id="tickall" type="checkbox" onclick="tickAll()">TickAll<br />
+<br /> 
+<input type="button" onclick="getElements()" value="How many elements named  
+    'myInput'?"> 
+</body> 
+</html> 

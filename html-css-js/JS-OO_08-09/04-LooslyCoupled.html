@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var x=100;
+        typeof x;
+        x = "Amit";
+        typeof x;
+        //  Loosly Typed
+        function add(x,y){
+            return x + y;
+        }
+        // The Problem with this Loosly Typed it can take anything as an argument
+        function firstNo(){ return 10;}
+        function secondNo(){return 20;}
+        add(10,20);
+        add("10","20");
+        add("abc",20);
+        add(firstNo,secondNo);
+        add([firstNo,secondNo]);
+        add([10,20],[30,40]);
+        add(10);
+        add(10,20,30,40,50);
+
+        // If check in the realworld scanario
+        // JQuery is using the same
+        //e.g. jquery(document).ready(function(){ });
+        // jquery("#id").val();
+        // jquery(function(){});
+
+        // Now See the advantage of using Loosly Typed Approach
+        // Like JQuery we want to create a function which can do stuff on numbers,
+        // string , functions , array , no arguments , single arguments
+
+        // Test this add using jasmine
+        // go and download the jasmine standalone release
+        // https://github.com/jasmine/jasmine/releases
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

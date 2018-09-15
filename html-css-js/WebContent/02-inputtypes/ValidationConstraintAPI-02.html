@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ValidationConstraint API - Powered by webspark.net</title>
+<style type="text/css">
+input:invalid {
+   border-color: #b94a48;
+        -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075);
+         box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.075);
+}
+input:valid {
+  border-color: #468847;
+        -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.075);
+}
+body {
+        background-color: #eee;
+      }
+</style>
+
+</head>
+<body>
+<form action="http://www.google.com">
+  
+          <label>Email Address</label>
+          <input type="email" id="email_addr" placeholder="Email address" required>
+          
+          <label>Confirm Email Address Again</label>
+          <input type="email"  id="email_addr_confirm" placeholder="Confirm email address" required >
+          <span class="help-block"></span>
+          <input type="submit" value="Submit">
+        
+</form>
+ <script type="text/javascript">
+      document.getElementById("email_addr_confirm").addEventListener("change", verifyEmail);
+      
+
+      function verifyEmail(input) {
+        input = input.srcElement;
+      
+        if (input.value != document.getElementById('email_addr').value) {
+          input.setCustomValidity('The two email addresses not match.');
+        } else {
+          input.setCustomValidity('');
+        }
+        
+      }
+
+      
+
+    </script>
+</body>
+</html>

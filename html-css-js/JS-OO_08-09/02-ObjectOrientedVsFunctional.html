@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // Functional Language - Functions are treated as First Class Citizens.
+        // In JavaScript Functions are also treated like Objects
+        // OOP - Functions are not exist there own , they exist through the classes.
+       //1. object creating using object literal
+        var x = {};
+        typeof x;
+        //1. function creating with the same way like object creating using object literal
+        var f1 = function(){
+
+        }
+        typeof f1;
+        //2. object creating using new keyword
+        var y = new Object();
+        typeof y;
+        //2 . function creating using new keyword
+
+        var f2 = new Function();  // this line of code will create anonymous function
+        f2;  // when u print this it will print anonymous function
+        typeof f2;
+        // Now the Question is how you can add the body , arguments and return value in
+        // Anonymous functions
+        var f3 = new Function("a","b","console.log('A is '+a+' B is '+b); return a + b;");
+        f3;
+        f3(100,200);
+
+        //******************************************
+        // Associating State and Behaviour with objects
+        var obj = {};
+        obj.id = 1001;
+        obj.name='Amit';
+        obj.display=function(){
+            // Note: In JavaScript this keyword is not associated by default like Java
+            // In JavaScript if u not specify this with id and name it will treat
+            // variables like local variable and it will not check the instance var by default
+            console.log("Id "+this.id +" Name is "+this.name);
+        }
+        obj.id;
+        obj.display();
+        // Associating State and Behaviour with functions
+        var f4 = function(){
+            console.log("f4 function");
+        }
+        f4.id = 1001;
+        f4.name='Amit';
+        f4.display=function(){
+            console.log("Id "+this.id +" Name is "+this.name);
+        }
+        f4.display();
+
+        // Passing Objects and return an Object
+        // 1. Passing Object as a Arguments
+        var obj = {};
+        obj.id = 1001;
+        obj.name='Amit';
+        obj.display=function(){
+            console.log("Id is "+this.id+" Name is "+this.name);
+        }
+        function printObject(temp){
+            console.log("Temp Id is "+temp.id+" Name is "+temp.name);
+            temp.display();
+        }
+        printObject(obj);
+
+        //2. Passing function as an argument in a function
+        function showAdd(x,y,z){
+            x(y,z);
+        }
+        showAdd(addNum,100,200);
+
+        // Return an Object
+        function returnObject(){
+            var emp = {id:1001,name:'amit'};
+            return emp;
+        }
+        // Return an Function
+        function myadd(x,y){
+            return function(z){
+                return x + y + z;
+            }
+        }
+        var x = myadd(100,200);
+        x(300);
+        //**************************************************
+        // instanceof Checking
+        var e = {};
+        e instanceof Object; // true
+        e instanceof  Function; // false
+
+        var w = function(){
+            console.log("W function");
+        }
+        w instanceof Function; // true
+        w instanceof Object; // true
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

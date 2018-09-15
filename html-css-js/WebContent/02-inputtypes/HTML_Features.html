@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Webspark - Registration</title>
+<style type="text/css">
+#myForm{
+	width: 50%;
+	border-radius: 20px;
+	border: 2px solid black;
+	padding: 10px;
+	margin: 0 auto;
+}
+table {
+	width: 100%;
+}
+#data{
+	width: 70%
+}
+td{
+	padding-left: 15px;
+}
+h1{
+	text-align: center;
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<section>
+<h1>Complete your registration form</h1>
+	<div id="myForm">
+		<form action ="#" method="post" autocomplete="off">
+			<table>
+				<tr>
+					<td>Username:</td>
+					<td id="data"><input type="text" placeholder="Enter your name" autocomplete="on" autofocus="autofocus" required="required"></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td id="data"><input type="email" placeholder="Enter your email" autocomplete="on" required="required"></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td id="data"><input type="password" placeholder="Enter your password" autocomplete="off" required="required"></td>
+				</tr>
+				<tr>
+					<td>Confirm Password:</td>
+					<td id="data"><input type="password" placeholder="Confirm password" autocomplete="off" required="required"></td>
+				</tr>
+				<tr>
+					<td>Gender:</td>
+					<td>
+						<label for="male">Male</label><input type="radio" name="gender" value="male" id="male">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<label for="female">Female</label><input type="radio" name="gender" value="female" id="female">
+					</td>
+				</tr>
+				<tr>
+					<td>Date of Birth:</td>
+					<td id="data"><input type="date" required="required"></td>
+				</tr>
+				<tr>
+					<td>Age:</td>
+					<td id="data"><input type="number" min="18" max="30" value="18" required="required"></td>
+				</tr>
+				<tr>
+					<td>Semester:</td>
+					<td id="data"><input type="range" min="1" max="8" value="1" onchange="semesterNo.value=value" required="required"><output id="semesterNo">1</output></td>
+				</tr>
+				<tr>
+					<td rowspan="2">Previous Marks:</td>
+					<td id="data"><input type="number" min="0" max="100" value="40" required="required" onchange="marks.value=value"></td>
+				</tr>
+				<tr>
+					<td id="data">0%<meter id="marks" value="40" min="0" max="100"></meter>100%</td>
+				</tr>
+				<tr>
+					<td>Course:</td>
+					<td id="data">
+						<input list="course" name="course">
+						<datalist id="course">
+							<option>Automotive Engineering</option>
+							<option>Bio-Technology</option>
+							<option>Civil Engineering</option>
+							<option>Computer Engineering</option>
+							<option>Electrical Engineering</option>
+							<option>Electrical and Electronics Engineering</option>
+							<option>Electronics and Communication Engineering</option>
+							<option>Engineering Physics</option>
+							<option>Environmental Engineering</option>
+							<option>Information Technology</option>
+							<option>Mathematics and Computing to introduce</option> 
+							<option>Mechanical Engineering</option>
+							<option>Polymer Science and Chemical Technology</option>
+							<option>Production and Industrial Engineering</option>
+							<option>Software Engineering</option>
+						</datalist>
+					</td>
+				</tr>
+				<tr>
+					<td>Color</td>
+					<td><input type="color"></td>
+				</tr>
+				<tr>
+					<td><input type="reset"></td>
+					<td><input type="submit"></td>
+				</tr>
+			</table>
+		</form>
+		<hr/>
+		<mark>Give your Feedback here (if any):</mark> <p contenteditable="true" spellcheck="true">Feedback</p>
+	</div>
+</section>
+</body>
+</html>

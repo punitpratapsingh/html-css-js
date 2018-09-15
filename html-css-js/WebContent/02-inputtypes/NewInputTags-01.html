@@ -1,0 +1,219 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>HTML5 New Input Tags - Powered by webspark.net</title>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<form action="InputTypesResult-01.jsp">
+<h2>Date/Time Tags Examples</h2>
+<table border="1">
+	<tr>
+		<th><h3>S.No.</h3></th>
+		<th><h3>Type</h3></th>
+		<th><h3>Tag</h3></th>
+		<th><h3>Output</h3></th>	
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>Date</td>
+		<td>&lt;input type="date" name="simpledate"&gt;</td>
+		<td><input type="date" name="simpledate" max="2012-01-20" min="2011-04-10"></td>
+		
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Date & Time</td>
+		<td>&lt;input type="datetime" name="dateAndTime"&gt;</td>
+		<td><input type="datetime" name="dateAndTime"></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>Date & Time (Local)</td>
+		<td>&lt;input type="datetime-local" name="datetimelocal"&gt;</td>
+		<td><input type="datetime-local" name="datetimelocal"></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>Month and Year</td>
+		<td>&lt;input type="month" name="monthAndYear"&gt;</td>
+		<td><input type="month" name="monthAndYear"></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>Time</td>
+		<td>&lt;input type="time" name="usr_time"&gt;</td>
+		<td><input type="time" name="usr_time"></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>Week</td>
+		<td>&lt;input type="week" name="week_year"&gt;</td>
+		<td><input type="week" name="week_year"></td>
+	</tr>
+</table>
+<br>
+<h2>New Validation Tags</h2>
+<table border="1">
+	<tr>
+		<th><h3>S.No.</h3></th>
+		<th><h3>Select</h3></th>
+		<th><h3>Tag</h3></th>
+		<th><h3>Output</h3></th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>E-mail</td>
+		<td>&lt;input type="email" name="email"&gt;</td>
+		<td><input type="email" name="email"  ></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>URL</td>
+		<td>&lt;input type="url" name="url"&gt;</td>
+		<td><input type="url" name="url"></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>Pattern</td>
+		<td>&lt;input type="text" name="creditcardNo" pattern="[0-9]{16}" title="CreditCard No is 16-digit with no spaces"&gt;</td>
+		<td><input type="text" name="creditcardNo" pattern="[0-9]{16}" title="CreditCard No is 16-digit with no spaces" >&nbsp;
+		E.g [A-Z]{3}[0-9]{4}
+		</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>maxLength</td>
+		<td>&lt;input type="text" name="deptName" maxlength="10"  &gt;</td>
+		<td><input type="text" name="deptName" maxlength="10"  ></td>
+	</tr>
+	
+</table>
+<br>
+<h2>Other New Tags</h2>
+<table border="1">
+	<tr>
+		<th><h3>S.No.</h3></th>
+		<th><h3>Select</h3></th>
+		<th><h3>Tag</h3></th>
+		<th><h3>Output</h3></th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>Color</td>
+		<td>&lt;input type="color" name="color"&gt;</td>
+		<td> <input type="color" name="color"></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Quantity</td>
+		<td>&lt;input type="number" name="number" min="1" max="5"&gt;</td>
+		<td><input type="number" name="number" min="1" max="5"></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>Range</td>
+		<td>&lt;input type="range" name="range" min="1" max="50" value ="10" onchange="outputId.value=value"&gt;</td>
+		<td>
+		<input type="range" name="range" min="1" max="50" value="10" onchange="outputId.value=value" >
+		<output id="outputId">10</output>
+		</td>
+	</tr>
+	<tr>
+		<td>3.1</td>
+		<td>Range</td>
+		<td>&lt;input type="range" name="vrange" min="1" max="50" value="10" onchange="outId.value=value" style="-webkit-appearance: slider-vertical"&gt;</td>
+		<td>
+		<input type="range" name="vrange" min="1" max="50" value="10" onchange="outId.value=value" style="-webkit-appearance: slider-vertical" >
+		<output id="outId">10</output>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>4</td>
+		<td>Search</td>
+		<td>&lt;input type="search" name="search"&gt;</td>
+		<td><input type="search" name="search"></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>Telephone</td>
+		<td>&lt;input type="tel" name="tel"&gt;</td>
+		<td><input type="tel" name="tel"></td>
+	</tr>
+<tr>
+		<td>6</td>
+		<td>File</td>
+		<td>&lt;input type="file" name="file"&gt;</td>
+		<td><input type="file" name="file"></td>
+	</tr>
+<tr>
+		<td>7</td>
+		<td>Progress</td>
+		<td>&lt;progress value="30" max="100"&gt;&lt;/progress&gt;</td>
+		<td><progress value="30" max="100"></progress></td>
+	</tr>	
+</table>
+<h2> New Attributes in Tags</h2>
+<table border="1">
+	<tr>
+		<th><h3>S.No.</h3></th>
+		<th><h3>Attribute Name</h3></th>
+		<th><h3>Code</h3></th>
+		<th><h3>Output</h3></th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>autocomplete</td>
+		<td>&lt;input type="text" name="creditcard" autocomplete="off"&gt;</td>
+		<td> <input type="text" name="creditcard" autocomplete="off"></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>autofocus</td>
+		<td>&lt;input type="text" name="customer_name" &gt;</td>
+		<td><input type="text" name="customer_name" autofocus="autofocus"></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>spellcheck</td>
+		<td>&lt;textarea  rows="4" cols="10" spellcheck="true" style="resize:none;" &gt;&lt;/textarea&gt;</td>
+		<td>
+		<textarea rows="4" cols="20" spellcheck="true" style="resize:none;"></textarea>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>placeholder</td>
+		<td>&lt;input type="text" name="userid" placeholder="Type Userid Here" size="30"&gt;</td>
+		<td><input type="text" name="userid" placeholder="Type Userid Here" size="30"></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>step</td>
+		<td>&lt;input type="range" name="volumelevel" min="0" max="50" value="0" step="10" onchange="level_outputId.value=value"&gt;</td>
+		<td>
+		<input type="range" name="volumelevel" min="0" max="50" value="0" step="10"  onchange="level_outputId.value=value"   >
+		<output id="level_outputId">0</output>
+		</td>
+	</tr>
+<tr>
+		<td>6</td>
+		<td>required</td>
+		<td>&lt;input type="password" name="password" required="required"&gt;</td>
+		<td><input type="password" name="password" required="required" ></td>
+	</tr>
+
+</table>
+<br>
+	<input type="submit" value="Submit">
+	<input type="reset" value="Reset">
+</form>
+
+</body>
+</html>

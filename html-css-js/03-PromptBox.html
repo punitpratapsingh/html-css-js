@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Basic Example</title>
+<script type="text/javascript">
+function show()
+{
+var a = parseInt(prompt("Enter the First No",0));
+var b = parseInt(prompt("Enter the Second No",0));
+var c = a + b;
+if(isNaN(c)){
+	alert("Sum is not a number, Please enter numbers only....");
+	show();
+}
+else{
+	alert("Sum is "+c);
+}
+}
+</script>
+</head>
+<body>
+<button onclick="show()">Click</button>
+</body>
+</html>
